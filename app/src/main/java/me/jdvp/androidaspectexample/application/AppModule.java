@@ -1,11 +1,6 @@
 package me.jdvp.androidaspectexample.application;
 
-import android.content.Context;
-
-import javax.inject.Singleton;
-
 import dagger.Module;
-import dagger.Provides;
 import me.jdvp.androidaspectexample.viewmodel.impl.ViewModelModule;
 
 /**
@@ -17,9 +12,4 @@ import me.jdvp.androidaspectexample.viewmodel.impl.ViewModelModule;
         includes = ViewModelModule.class
 )
 class AppModule {
-    @Provides
-    @Singleton
-    Context context() {
-        return DaggerSetupApplication.getApplicationContextInstance();
-    }
 }

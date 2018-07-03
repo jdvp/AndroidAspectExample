@@ -15,6 +15,8 @@ import me.jdvp.androidaspectexample.application.DaggerSetupApplication;
 import me.jdvp.androidaspectexample.viewmodel.LoggingViewModel;
 
 /**
+ * Aspect file used to do logging
+ *
  * Created by jdvp on 6/29/18.
  */
 
