@@ -6,3 +6,6 @@ In order to see that the code has been injected, build the app and check the app
 ajc-transform.log file which will show which advices have been added to the project during the build process.
 
 If you run the app, the aspects added will simply log when a button is clicked or onCreate happens.
+
+Created as a sample for the following Medium article:
+[Aspect-Oriented Programming in Android](https://link.medium.com/XYs0fWKrC7)
