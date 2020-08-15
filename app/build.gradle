@@ -5,11 +5,11 @@ apply plugin: "kotlin-kapt"
 apply plugin: 'com.archinamon.aspectj'
 
 android {
-    compileSdkVersion 29
     defaultConfig {
         applicationId "me.jdvp.androidaspectexample"
         minSdkVersion 23
-        targetSdkVersion 29
+        targetSdkVersion 30
+        compileSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -37,10 +37,15 @@ android {
             returnDefaultValues = true
         }
     }
+
+    lintOptions {
+        checkAllWarnings true
+        warningsAsErrors true
+    }
 }
 
 dependencies {
     //android sdk items
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
 }
