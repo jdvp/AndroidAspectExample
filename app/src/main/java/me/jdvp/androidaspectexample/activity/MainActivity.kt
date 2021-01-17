@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        button_2.setOnClickListener { Toast.makeText(this@MainActivity, "Button 2 clicked", Toast.LENGTH_SHORT).show() }
+        button_2.setOnClickListener {
+            Toast.makeText(this@MainActivity, "Button 2 clicked", Toast.LENGTH_SHORT).show()
+        }
     }
 }

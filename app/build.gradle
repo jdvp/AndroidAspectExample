@@ -2,7 +2,7 @@ apply plugin: "com.android.application"
 apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 apply plugin: "kotlin-kapt"
-apply plugin: "com.archinamon.aspectj"
+apply plugin: "com.ibotta.gradle.aop"
 
 android {
     defaultConfig {
@@ -48,4 +48,7 @@ dependencies {
     //android sdk items
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "androidx.appcompat:appcompat:1.2.0"
+
+    //AspectJ
+    implementation "org.aspectj:aspectjrt:1.9.6"
 }
