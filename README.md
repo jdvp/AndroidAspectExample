@@ -8,15 +8,17 @@ ajc-transform.log file which will show which advices have been added to the proj
 If you run the app, the aspects added will simply log when a button is clicked or onCreate happens.
 
 Created as a sample for the following Medium article:
-[Aspect-Oriented Programming in Android](https://link.medium.com/XYs0fWKrC7)
+[Aspect-Oriented Programming in Android](https://jdvp.medium.com/aspect-oriented-programming-in-android-159054d52757)
 
 ### Releases
 Please see the [GitHub Releases Page](https://github.com/jdvp/AndroidAspectExample/releases)
 for this example if you want to see details for a specific Android Gradle Plugin (AGP) version.
+Each release version for this sample project will correspond to the same AGP version.
 
 ---
 
 As of v4.1.0, this sample project leverages the following Gradle Plugin for weaving aspects:
+
 [gradle-aspectj-pipeline-plugin](https://github.com/Ibotta/gradle-aspectj-pipeline-plugin)
 
 Previously, this project was leveraging [android-gradle-aspectj](https://github.com/Archinamon/android-gradle-aspectj).
