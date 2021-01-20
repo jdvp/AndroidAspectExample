@@ -12,4 +12,14 @@ Created as a sample for the following Medium article:
 
 ### Releases
 Please see the [GitHub Releases Page](https://github.com/jdvp/AndroidAspectExample/releases)
-for this example if you want to see details for a specific Android Gradle Plugin version.
+for this example if you want to see details for a specific Android Gradle Plugin (AGP) version.
+
+---
+
+As of v4.1.0, this sample project leverages the following Gradle Plugin for weaving aspects:
+[gradle-aspectj-pipeline-plugin](https://github.com/Ibotta/gradle-aspectj-pipeline-plugin)
+
+Previously, this project was leveraging [android-gradle-aspectj](https://github.com/Archinamon/android-gradle-aspectj).
+For information on why I made the switch, you might be interested in reading my article "[Switching AspectJ Plugins in Android](https://jdvp.me/articles/Switching-AspectJ-Plugins-Android)".
+
+Code required using either plugin is the same since they both use the same aspectjrt library under the hood. The only difference is the required plugin setup in our gradle files.
