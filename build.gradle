@@ -15,7 +15,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         //AOP
-        classpath "com.ibotta:plugin:1.0.7"
+        classpath "com.ibotta:plugin:1.1.0"
     }
 }
 
