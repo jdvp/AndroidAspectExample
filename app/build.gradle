@@ -42,7 +42,8 @@ android {
         warningsAsErrors true
 
         informational "NewerVersionAvailable",
-                "GradleDependency"
+                "GradleDependency",
+                "ConvertToWebp"
     }
 }
 
