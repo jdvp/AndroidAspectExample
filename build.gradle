@@ -10,7 +10,7 @@ buildscript {
     }
     dependencies {
         //Android Gradle Plugin (AGP)
-        classpath "com.android.tools.build:gradle:7.0.1"
+        classpath "com.android.tools.build:gradle:7.0.2"
 
         //Kotlin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
