@@ -9,7 +9,8 @@ buildscript {
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0'
+        //Android Gradle Plugin (AGP)
+        classpath "com.android.tools.build:gradle:7.0.1"
 
         //Kotlin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
