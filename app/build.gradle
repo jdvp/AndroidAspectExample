@@ -26,8 +26,19 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    /*
+    Required when using above Kotlin 1.5, otherwise Kotlin lambdas will be compiled using
+    LambdaMetafactory.metafactory() which means that aspects cannot be matched since the
+    generated lambdas won't have the expected method names. You can see my write-up of the
+    issue here:
+    https://github.com/Ibotta/gradle-aspectj-pipeline-plugin/issues/8
+     */
+    kotlinOptions {
+        freeCompilerArgs = ["-Xsam-conversions=class"]
     }
 
     testOptions {
