@@ -30,7 +30,7 @@ jobs:
       matrix:
         api-level:
           - 23
-          - 30
+          - 29
 
     steps:
       - uses: actions/checkout@v2.3.4
