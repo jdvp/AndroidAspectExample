@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import me.jdvp.androidaspectexample.R
 
@@ -26,12 +27,16 @@ class MainActivity : AppCompatActivity() {
         @Suppress("ObjectLiteralToLambda")
         button1.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
-                Toast.makeText(this@MainActivity, "Button 1 clicked", Toast.LENGTH_SHORT).show()
+                AlertDialog.Builder(this@MainActivity)
+                    .setMessage("Button 1 clicked")
+                    .show()
             }
         })
 
         button2.setOnClickListener {
-            Toast.makeText(this@MainActivity, "Button 2 clicked", Toast.LENGTH_SHORT).show()
+            AlertDialog.Builder(this@MainActivity)
+                .setMessage("Button 2 clicked")
+                .show()
         }
     }
 }

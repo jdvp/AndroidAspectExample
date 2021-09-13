@@ -51,8 +51,7 @@ class AspectLogging {
     @Before("onButtonClick() && args(view)")
     fun onClickAdvice(view: View?) {
         if (view is TextView) {
-            val text = view.text.toString()
-            Logger.logItem(text)
+            Logger.logItem("${view.text} clicked")
         }
     }
 }
