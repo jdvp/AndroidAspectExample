@@ -52,11 +52,9 @@ jobs:
           echo "::set-output name=TARGET::$TARGET"
 
       - name: Run Instrumented Tests
-        uses: reactivecircus/android-emulator-runner@v2.21.0
+        uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ steps.determine-target.outputs.TARGET }}
           emulator-build: 7425822 # https://github.com/ReactiveCircus/android-emulator-runner/issues/160
           script: ./gradlew connectedCheck
-        env:
-          API_LEVEL: ${{ matrix.api-level }}
