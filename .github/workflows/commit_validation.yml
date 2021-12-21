@@ -47,5 +47,6 @@ jobs:
         with:
           api-level: ${{ matrix.api-level }}
           script: ./gradlew connectedCheck
+          emulator-build: 7425822 # https://github.com/ReactiveCircus/android-emulator-runner/issues/160
         env:
           API_LEVEL: ${{ matrix.api-level }}
