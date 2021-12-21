@@ -39,6 +39,7 @@ android {
      */
     kotlinOptions {
         freeCompilerArgs = ["-Xsam-conversions=class"]
+        jvmTarget = "11"
     }
 
     testOptions {
