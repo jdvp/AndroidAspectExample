@@ -28,10 +28,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        api-level:
-          - 23
-          - 29
-          - 32
+        api-level: [23, 29, 32]
 
     steps:
       - uses: actions/checkout@v2.4.0
@@ -41,12 +38,25 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+          
+      # Run all API 29+ emulators using google_apis image
+      - name: Determine Emulator Target
+        id: determine-target
+        env:
+          API_LEVEL: ${{ matrix.api-level }}
+        run: |
+          TARGET="default"
+          if [ "$API_LEVEL" -ge "29" ]; then
+            TARGET="google_apis"
+          fi
+          echo "::set-output name=TARGET::$TARGET"
 
       - name: Run Instrumented Tests
         uses: reactivecircus/android-emulator-runner@v2.21.0
         with:
           api-level: ${{ matrix.api-level }}
-          script: ./gradlew connectedCheck
+          target: ${{ steps.determine-target.outputs.TARGET }}
           emulator-build: 7425822 # https://github.com/ReactiveCircus/android-emulator-runner/issues/160
+          script: ./gradlew connectedCheck
         env:
           API_LEVEL: ${{ matrix.api-level }}
