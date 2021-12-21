@@ -6,11 +6,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2.4.0
+    - uses: actions/checkout@v2
     - uses: gradle/wrapper-validation-action@v1.0.4
 
     - name: set up JDK 11
-      uses: actions/setup-java@v2.4.0
+      uses: actions/setup-java@v2
       with:
         distribution: 'zulu'
         java-version: '11'
@@ -28,33 +28,20 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        api-level: [23, 29, 32]
+        api-level: [23, 29]
 
     steps:
-      - uses: actions/checkout@v2.4.0
+      - uses: actions/checkout@v2
       - uses: gradle/wrapper-validation-action@v1.0.4
 
       - uses: actions/setup-java@v2
         with:
           distribution: 'zulu'
           java-version: '11'
-          
-      # Run all API 29+ emulators using google_apis image
-      - name: Determine Emulator Target
-        id: determine-target
-        env:
-          API_LEVEL: ${{ matrix.api-level }}
-        run: |
-          TARGET="default"
-          if [ "$API_LEVEL" -ge "29" ]; then
-            TARGET="google_apis"
-          fi
-          echo "::set-output name=TARGET::$TARGET"
 
       - name: Run Instrumented Tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ steps.determine-target.outputs.TARGET }}
-          emulator-build: 7425822 # https://github.com/ReactiveCircus/android-emulator-runner/issues/160
           script: ./gradlew connectedCheck
