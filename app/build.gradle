@@ -49,7 +49,7 @@ android {
         }
     }
 
-    lintOptions {
+    lint {
         checkAllWarnings true
         warningsAsErrors true
 
