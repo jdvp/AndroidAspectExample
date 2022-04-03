@@ -60,8 +60,7 @@ android {
 }
 
 dependencies {
-    //android sdk items
-    implementation fileTree(dir: "libs", include: ["*.jar"])
+    //AppCompat
     implementation "androidx.appcompat:appcompat:1.4.1"
 
     //AspectJ
