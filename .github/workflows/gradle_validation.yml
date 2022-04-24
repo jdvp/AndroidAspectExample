@@ -1,0 +1,40 @@
+name: Gradle Wrapper Validation Example
+# Will trigger on single in this repository for example purposes
+# But generally this would go in your push/commit pipelines
+on:
+  push:
+    branches:
+      - "feature/gradle-wrapper-validation-example"
+
+jobs:
+  gradle_wrapper_validation:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            command: .github/workflows/validate_gradle.sh
+          - os: macos-latest
+            command: .github/workflows/validate_gradle.sh
+          - os: windows-latest
+            command: sh .github/workflows/validate_gradle.sh
+    steps:
+      - uses: actions/checkout@v2
+
+      # Validate Gradle Wrapper (via GitHub Actions)
+      - uses: gradle/wrapper-validation-action@v1
+
+      # Validate Gradle Wrapper (via our own script)
+      # If we don't use GitHub Actions (e.g. we are using Jenkins or TeamCity etc.),
+      # we might still use our own script to validate that the wrapper is valid
+      - name: Validate Gradle Wrapper
+        run: ${{ matrix.command }}
+
+      - name: set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '11'
+
+      - name: Lint & Unit Test
+        run: ./gradlew clean lint test
