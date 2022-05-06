@@ -14,6 +14,7 @@ jobs:
       with:
         distribution: 'zulu'
         java-version: '11'
+        cache: 'gradle'
 
     - name: Lint
       run: ./gradlew clean lint 
@@ -38,6 +39,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+          cache: 'gradle'
 
       - name: Run Instrumented Tests
         uses: reactivecircus/android-emulator-runner@v2
