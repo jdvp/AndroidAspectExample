@@ -4,6 +4,7 @@ apply plugin: "kotlin-kapt"
 apply plugin: "com.ibotta.gradle.aop"
 
 android {
+    namespace 'me.jdvp.androidaspectexample'
     defaultConfig {
         applicationId "me.jdvp.androidaspectexample"
         minSdkVersion 23
