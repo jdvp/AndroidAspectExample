@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "me.jdvp.androidaspectexample"
         minSdkVersion 23
-        targetSdkVersion 32
+        targetSdkVersion 33
         compileSdkVersion 32
         versionCode 1
         versionName "1.0"
