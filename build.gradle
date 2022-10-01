@@ -11,10 +11,10 @@ buildscript {
         classpath "com.android.tools.build:gradle:7.3.0"
 
         //Kotlin
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20"
 
         //AOP
-        classpath "com.ibotta:plugin:1.4.0"
+        classpath "com.ibotta:plugin:1.4.1"
     }
 }
 
