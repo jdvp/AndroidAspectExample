@@ -40,7 +40,7 @@ kotlinOptions {
 
 You can read more about the issue [here] if interested.
 
-### Using newer versions of AspectJ
+#### Using newer versions of AspectJ
 
 If you are using AspectJ for some other reason and so want to leverage a different version of the library
 other than the one suggested by the Ibotta Plugin (1.9.6), which is used to compile the plugin, you can
