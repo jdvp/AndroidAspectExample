@@ -63,13 +63,15 @@ android {
 }
 
 dependencies {
-    //AppCompat
+    // AppCompat
     implementation "androidx.appcompat:appcompat:1.6.1"
 
-    //AspectJ
-    implementation "org.aspectj:aspectjrt:1.9.7"
+    // AspectJ - Required for the Ibotta AspectJ Plugin
+    // That plugin is compiled against v1.9.7 but here we
+    // are trying to use the latest to ensure compatibility
+    implementation "org.aspectj:aspectjrt:1.9.22"
 
-    //instrumented testing
+    // Instrumented testing
     androidTestImplementation "androidx.test.ext:junit:1.1.5"
     androidTestImplementation "androidx.test:core-ktx:1.5.0"
     androidTestImplementation "androidx.test:rules:1.5.0"
