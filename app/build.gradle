@@ -20,6 +20,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    compileOptions {
+        coreLibraryDesugaringEnabled true
+    }
     buildTypes {
         debug {
             debuggable true
@@ -70,6 +73,10 @@ dependencies {
     // That plugin is compiled against v1.9.7 but here we
     // are trying to use the latest to ensure compatibility
     implementation "org.aspectj:aspectjrt:1.9.22"
+
+    // If minSdk is like 25 or below, we seemingly need to desugar when
+    // using aspectjrt 1.9.22 or above
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
 
     // Instrumented testing
     androidTestImplementation "androidx.test.ext:junit:1.1.5"

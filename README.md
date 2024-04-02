@@ -32,13 +32,36 @@ Code required using either plugin is the same since they both use the same aspec
 This is more of an issue with AspectJ than this project or even the gradle-aspectj-pipeline-plugin project, but Kotlin code compiled with Kotlin version 1.5.0 now uses invokedynamic to to compile Single Abstract Method functions ([see here] for information in the documentation). This means that lambdas in Kotlin using this version or above will not be weaved as expected as the compiled bytecode will not be able to be matched by AspectJ pointcuts.
 
 To get around this for now, enable the following in project-level build.gradle files:  
-```
+```groovy
 kotlinOptions {
     freeCompilerArgs = ["-Xsam-conversions=class"]
 }
 ```
 
 You can read more about the issue [here] if interested.
+
+### Using newer versions of AspectJ
+
+If you are using AspectJ for some other reason and so want to leverage a different version of the library
+other than the one suggested by the Ibotta Plugin (1.9.6), which is used to compile the plugin, you can
+generally do so freely up until version 1.9.21 of the AspectJ Plugin (`org.aspectj:aspectjrt`).
+
+If you have a minSdk of 25 or lower, 1.9.22 will likely give you problems. My testing seems to indicate 
+that this can be fixed by [desugaring].
+
+First, make sure the requisite compile option is set
+```groovy
+compileOptions {
+    coreLibraryDesugaringEnabled true
+}
+```
+
+Then, include the desugaring dependency
+```groovy
+coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.4")
+```
+
+Make sure to update this dependency to latest as required.
 
 #### Why I don't recommend AOP in 2023
 
@@ -66,3 +89,4 @@ and playing around with the sample project.
 [here]: https://github.com/Ibotta/gradle-aspectj-pipeline-plugin/issues/8
 [Why I Don't Recommend Aspect-Oriented Programming in Android in 2023]: https://jdvp.me/articles/AOP-in-Android-2023
 [would not be broken]: https://github.com/Ibotta/gradle-aspectj-pipeline-plugin/issues/34
+[desugaring]: https://android-developers.googleblog.com/2023/02/api-desugaring-supporting-android-13-and-java-nio.html
