@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - os: macos-latest
+          - os: ubuntu-latest
             command: .github/workflows/validate_gradle.sh
           - os: macos-latest
             command: .github/workflows/validate_gradle.sh
