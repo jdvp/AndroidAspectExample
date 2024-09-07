@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    groups:
+      gradle-dependencies:
+          applies-to: version-updates
+          patterns:
+            - "*"    
+    schedule:
+      interval: "weekly"
+      
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    groups:
+      actions-dependencies:
+          applies-to: version-updates
+          patterns:
+            - "*"    
+    schedule:
+      interval: "weekly"
+
+# Configuration documentation
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
