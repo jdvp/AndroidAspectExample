@@ -76,7 +76,7 @@ dependencies {
 
     // If minSdk is like 25 or below, we seemingly need to desugar when
     // using aspectjrt 1.9.22 or above
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.3")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 
     // Instrumented testing
     androidTestImplementation "androidx.test.ext:junit:1.2.1"
