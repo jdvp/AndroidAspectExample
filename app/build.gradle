@@ -58,7 +58,8 @@ android {
 
         informational "NewerVersionAvailable",
                 "GradleDependency",
-                "ConvertToWebp"
+                "ConvertToWebp",
+                "OldTargetApi"
 
         disable "InvalidPackage"
     }
