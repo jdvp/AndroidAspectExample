@@ -67,7 +67,7 @@ android {
 
 dependencies {
     // AppCompat
-    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation "androidx.appcompat:appcompat:1.7.1"
 
     // AspectJ - Required for the Ibotta AspectJ Plugin
     // That plugin is compiled against v1.9.6 but here we
