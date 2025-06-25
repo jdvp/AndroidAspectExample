@@ -13,8 +13,8 @@ android {
     defaultConfig {
         applicationId "me.jdvp.androidaspectexample"
         minSdkVersion 23
-        targetSdkVersion 35
-        compileSdk 35
+        targetSdkVersion 36
+        compileSdk 36
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
