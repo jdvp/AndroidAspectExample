@@ -8,7 +8,7 @@ updates:
           patterns:
             - "*"    
     schedule:
-      interval: "weekly"
+      interval: "daily"
       
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -18,7 +18,7 @@ updates:
           patterns:
             - "*"    
     schedule:
-      interval: "weekly"
+      interval: "daily"
 
 # Configuration documentation
 # https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
