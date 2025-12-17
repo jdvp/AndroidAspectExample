@@ -72,7 +72,7 @@ dependencies {
     // AspectJ - Required for the Ibotta AspectJ Plugin
     // That plugin is compiled against v1.9.6 but here we
     // are trying to use the latest to ensure compatibility
-    implementation "org.aspectj:aspectjrt:1.9.25"
+    implementation "org.aspectj:aspectjrt:1.9.25.1"
 
     // If minSdk is like 25 or below, we seemingly need to desugar when
     // using aspectjrt 1.9.22 or above
