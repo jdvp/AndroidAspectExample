@@ -16,6 +16,27 @@ Each release version for this sample project will correspond to the same AGP ver
 
 ## Notes
 
+### Important: AGP 9.0.0 and AndroidAspectExample EOL
+
+It seems this project is on its last legs with the introduction of AGP 9.0.0. It shouldn't matter too
+much since this is just a sample project, but heads up that since AGP will be updating their DSL in 9.0.0
+and removing it in the near future, this project will stop working. This is because the underlying 
+Aspect library [gradle-aspectj-pipeline-plugin] is no longer maintained since 2023 so has not updated
+to the new DSL. 
+
+For now, i.e. at least the first major release of AGP 9, this can be worked around by using the following
+flag in `gradle.properties`:
+
+```text
+android.newDsl=false
+```
+
+As mentioned below, I do not personally recommend AspectJ anymore but if you still prefer to use it,
+there do seem to be alternatives out there under active development, such as [AndroidAOP]. I have not
+personally vetted that library but it does appear to be pretty active and have a decent amount of stars. 
+
+This project will be updated until the `newDsl` flag is removed after which I will probably archive the project.
+
 #### Plugin Change
 
 As of v4.1.0, this sample project leverages the following Gradle Plugin for weaving aspects:
@@ -37,6 +58,16 @@ kotlinOptions {
     freeCompilerArgs = ["-Xsam-conversions=class"]
 }
 ```
+
+If you are using a version of Kotlin/AGP where `kotlinOptions` has been deprecated or removed, you can use the following
+```groovy
+kotlin {
+    compilerOptions {
+        freeCompilerArgs = ["-Xsam-conversions=class"]
+    }
+}
+```
+
 
 You can read more about the issue [here] if interested.
 
@@ -90,3 +121,4 @@ and playing around with the sample project.
 [Why I Don't Recommend Aspect-Oriented Programming in Android in 2023]: https://jdvp.me/articles/AOP-in-Android-2023
 [would not be broken]: https://github.com/Ibotta/gradle-aspectj-pipeline-plugin/issues/34
 [desugaring]: https://android-developers.googleblog.com/2023/02/api-desugaring-supporting-android-13-and-java-nio.html
+[AndroidAOP]: https://github.com/FlyJingFish/AndroidAOP
