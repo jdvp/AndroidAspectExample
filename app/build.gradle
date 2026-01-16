@@ -1,5 +1,4 @@
 apply plugin: "com.android.application"
-apply plugin: "kotlin-android"
 apply plugin: "com.ibotta.gradle.aop"
 
 java {
@@ -30,7 +29,7 @@ android {
         }
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), "proguard-rules.pro"
         }
     }
 
@@ -41,8 +40,10 @@ android {
     issue here:
     https://github.com/Ibotta/gradle-aspectj-pipeline-plugin/issues/8
      */
-    kotlinOptions {
-        freeCompilerArgs = ["-Xsam-conversions=class"]
+    kotlin {
+        compilerOptions {
+            freeCompilerArgs = ["-Xsam-conversions=class"]
+        }
     }
 
     testOptions {
