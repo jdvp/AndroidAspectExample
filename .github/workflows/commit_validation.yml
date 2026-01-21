@@ -13,8 +13,9 @@ jobs:
       uses: actions/setup-java@v5
       with:
         distribution: 'zulu'
-        java-version: '17'
-        cache: 'gradle'
+        java-version: '21'
+
+    - uses: gradle/actions/setup-gradle@v5
 
     - name: Lint
       run: ./gradlew clean lint 
@@ -38,8 +39,9 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
-          java-version: '17'
-          cache: 'gradle'
+          java-version: '21'
+
+      - uses: gradle/actions/setup-gradle@v5
 
       - name: Enable KVM group perms (needed for reactivecircus/android-emulator-runner below)
         run: |
