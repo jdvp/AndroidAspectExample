@@ -21,7 +21,7 @@ jobs:
           - os: windows-latest
             command: sh .github/workflows/validate_gradle.sh
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       # Validate Gradle Wrapper (via GitHub Actions)
       - uses: gradle/actions/wrapper-validation@v6
