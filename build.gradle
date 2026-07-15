@@ -8,10 +8,10 @@ buildscript {
     }
     dependencies {
         //Android Gradle Plugin (AGP)
-        classpath "com.android.tools.build:gradle:9.2.1"
+        classpath "com.android.tools.build:gradle:9.3.0"
 
         //Kotlin
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:2.4.10"
 
         //AOP
         classpath "com.ibotta:plugin:1.4.1"
